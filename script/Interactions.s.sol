@@ -11,6 +11,7 @@ import {MerkleAirdrop} from "../src/MerkleAirdrop.sol";
  * The signature is a hardcoded value, and the proof is also hardcoded
  * They should be replaced with the actual values from the airdrop depending on the deployment
  */
+
 contract ClaimAirdrop is Script {
     error __ClaimAirdrop__InvalidSignature();
 

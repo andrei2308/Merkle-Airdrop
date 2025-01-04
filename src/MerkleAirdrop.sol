@@ -11,6 +11,7 @@ import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
  * @author Chitoiu Andrei
  * @notice This contract is used to distribute tokens to users based on a merkle tree
  */
+
 contract MerkleAirdrop is EIP712 {
     using SafeERC20 for IERC20;
     ////////////////////////////

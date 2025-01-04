@@ -10,8 +10,9 @@ import {IERC20, SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeE
  * @author Chitoiu Andrei
  * @notice This script deploys a MerkleAirdrop contract and a BitoiuToken contract
  * The s_merkleRoot is the root of the merkle tree that will be used to verify the claims
- * The Merkle Root should be replaced with the root of the merkle tree that will be used depending on the accounts and values that will be used 
+ * The Merkle Root should be replaced with the root of the merkle tree that will be used depending on the accounts and values that will be used
  */
+
 contract DeployMerkleAirdrop is Script {
     bytes32 private s_merkleRoot = 0xaa5d581231e596618465a56aa0f5870ba6e20785fe436d5bfb82b08662ccc7c4;
     uint256 private s_amountToTransfer = 4 * 25 * 1e18;

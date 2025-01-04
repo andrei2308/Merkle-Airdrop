@@ -9,6 +9,7 @@ import {BitoiuToken} from "../src/BitoiuToken.sol";
  * @author Chitoiu Andrei
  * @notice This contract tests the MerkleAirdrop contract
  */
+
 contract MerkleAirdropTest is Test {
     MerkleAirdrop public airdrop;
     BitoiuToken public token;
