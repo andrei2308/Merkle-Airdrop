@@ -42,7 +42,7 @@ contract ClaimAirdrop is Script {
     }
 
     function run() external {
-        address mostRcentlyDeployed = DevOpsTools.get_most_recent_deployment("MerkleAirdrop", block.chainid);
+        address mostRcentlyDeployed = DevOpsTools.get_most_recent_deployment("MerkleAirdrop", block.chainid); //function will work only on UNIX based systems due to path differences
         claimAirdrop(mostRcentlyDeployed);
     }
 }
