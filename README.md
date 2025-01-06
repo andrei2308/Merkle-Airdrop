@@ -5,7 +5,7 @@ The Merkle-Airdrop project is a smart contract system designed to efficiently di
 - **lib/**: Contains external libraries and dependencies.
 - **script/**: Includes deployment and interaction scripts for the smart contracts.
 - **src/**: Houses the main Solidity contracts:
-  - *BagelToken.sol*: The ERC20 token contract used in the airdrop.
+  - *BitoiuToken.sol*: The ERC20 token contract used in the airdrop.
   - *MerkleAirdrop.sol*: The smart contract that facilitates the Merkle-based airdrop mechanism.
 - **test/**: Contains test files to verify the functionality and security of the contracts.
 - **foundry.toml**: Configuration file for Foundry, the Ethereum development toolkit used in this project.
