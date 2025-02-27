@@ -21,7 +21,7 @@ contract ClaimAirdrop is Script {
     bytes32 proofTwo = 0xe5ebd1e1b5a5478a944ecab36a9a954ac3b6b8216875f6524caa7a1d87096576;
     bytes32[] PROOF = [proofOne, proofTwo];
     bytes private SIGNATURE =
-        hex"12e145324b60cd4d302bfad59f72946d45ffad8b9fd608e672fd7f02029de7c438cfa0b8251ea803f361522da811406d441df04ee99c3dc7d65f8550e12be2ca1c";
+        hex"a8621870ce4f683842d005a9b8c27e9d5c2e993624270acb8d54cd04176a9a054aa2a6329cce4d708e7ce8a2cbe2aa71693f3b2e65cf9f54b7f01fce535687681c";
 
     function claimAirdrop(address airdrop) public {
         vm.startBroadcast();
