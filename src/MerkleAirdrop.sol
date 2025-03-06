@@ -6,6 +6,7 @@ import {IERC20, SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeE
 import {MerkleProof} from "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import {EIP712} from "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import {console} from "forge-std/Script.sol";
 /**
  * @title MerkleAirdrop
  * @author Chitoiu Andrei
@@ -60,6 +61,20 @@ contract MerkleAirdrop is EIP712 {
         if (!MerkleProof.verify(merkleProof, i_merkleRoot, leaf)) {
             revert MerkleAirdrop__InvalidProof();
         }
+        claimed[account] = true;
+        emit Claim(account, amount);
+        i_airdropToken.safeTransfer(account, amount);
+    }
+
+    function claimDefault(address account, uint256 amount, bytes32[] calldata merkleProof) external {
+        if (claimed[account]) {
+            revert MerkleAirdrop__AlreadyClaimed();
+        }
+        bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(account, amount))));
+        if (!MerkleProof.verify(merkleProof, i_merkleRoot, leaf)) {
+            revert MerkleAirdrop__InvalidProof();
+        }
+        console.log("Proof verified");
         claimed[account] = true;
         emit Claim(account, amount);
         i_airdropToken.safeTransfer(account, amount);
